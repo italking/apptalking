@@ -80,9 +80,9 @@
               <div class="article-content" itemprop="articleBody">
                 <p>欢迎使用Apptalking，本文档将帮助您快速理解产品的核心功能,如果在使用过程当中遇到了问题，欢迎通过邮件的方式进行问答。</p>
 <h2 id="日志追溯" class="article-heading"><a href="#日志追溯" class="headerlink" title="日志追溯?"></a>日志追溯?<a class="article-anchor" href="#日志追溯" aria-hidden="true"></a></h2><p>Apptalking 支持日志追溯功能，一次请求中应用输出的日志可以嵌入唯一的标示信息 GUID、事物名称、事物ID，用户可以根据以上的内容进行日志的关联追溯。日志追溯支持跨应用，单次请求涉及到多个应用，每个应用上输出的日志，嵌入的标示的信息是一致的。</p>
-<h3 id="日志追溯启用配置" class="article-heading"><a href="#日志追溯启用配置" class="headerlink" title="日志追溯启用配置"></a>日志追溯启用配置<a class="article-anchor" href="#日志追溯启用配置" aria-hidden="true"></a></h3><p>日志追溯可以在指定的事物中开启，日志追踪一般在比较重要的事物上开启日志追踪功能，比如设置到用户支付的事物。<br><img src="https://www.apptalking.com/images/LOG_BT.png" alt="Apptalking" title="Apptalking  智能应用性能管理（APM）系统 "></p>
+<h3 id="日志追溯启用配置" class="article-heading"><a href="#日志追溯启用配置" class="headerlink" title="日志追溯启用配置"></a>日志追溯启用配置<a class="article-anchor" href="#日志追溯启用配置" aria-hidden="true"></a></h3><p>日志追溯可以在指定的事物中开启，日志追踪一般在比较重要的事物上开启日志追踪功能，比如设置到用户支付的事物。<br><img src="https://www.apptalking.com/images/Log_BT.png" alt="Apptalking" title="Apptalking  智能应用性能管理（APM）系统 "></p>
 <h3 id="日志追溯-Pattern-设置" class="article-heading"><a href="#日志追溯-Pattern-设置" class="headerlink" title="日志追溯 Pattern 设置"></a>日志追溯 Pattern 设置<a class="article-anchor" href="#日志追溯-Pattern-设置" aria-hidden="true"></a></h3><p>日志组件都可以在自身的配置  Pattern ，Apptalking 支持在 配置文件中配置，同时也可以Apptalking控制台上进行设置，可以动态的调整日志 Pattern 。<br>在配置中增加 %{AT_REQUEST_GUID} , 就可以自动嵌入追溯信息。</p>
-<p><img src="https://www.apptalking.com/images/LOG_P.png" alt="Apptalking" title="Apptalking  智能应用性能管理（APM）系统 "></p>
+<p><img src="https://www.apptalking.com/images/Log_P.png" alt="Apptalking" title="Apptalking  智能应用性能管理（APM）系统 "></p>
 <h3 id="日志输出实例" class="article-heading"><a href="#日志输出实例" class="headerlink" title="日志输出实例"></a>日志输出实例<a class="article-anchor" href="#日志输出实例" aria-hidden="true"></a></h3><p>未启用日志追溯功能<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2019</span>-<span class="number">02</span>-<span class="number">04</span> <span class="number">22</span>:<span class="number">39</span>:<span class="number">30</span>,<span class="number">034</span> ERROR   - test log <span class="number">1</span></span><br><span class="line"><span class="number">2019</span>-<span class="number">02</span>-<span class="number">04</span> <span class="number">22</span>:<span class="number">39</span>:<span class="number">30</span>,<span class="number">034</span> ERROR   - test log <span class="number">2</span></span><br><span class="line"><span class="number">2019</span>-<span class="number">02</span>-<span class="number">04</span> <span class="number">22</span>:<span class="number">39</span>:<span class="number">30</span>,<span class="number">034</span> ERROR   - test log <span class="number">3</span></span><br></pre></td></tr></table></figure></p>
 <p>启用日志追溯功能<br>配置的格式的为</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%d %-<span class="number">5</span>p  %X&#123;AT_REQUEST_GUID&#125;  - %m%n</span><br></pre></td></tr></table></figure>
@@ -91,7 +91,7 @@
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2019-02-04T15:54:46.106Z" itemprop="dateModified">上次更新：2019-02-04</time>
+                <time class="article-footer-updated" datetime="2019-02-04T20:34:23.383Z" itemprop="dateModified">上次更新：2019-02-05</time>
                 <a href="interface.html" class="article-footer-prev" title="业务接口"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="alert.html" class="article-footer-next" title="告警"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
