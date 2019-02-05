@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.apptalking.com/product/index.html</loc>
+    <lastmod>2019-02-05T04:40:05.029Z</lastmod>
+  </url>  <url>
     <loc>https://www.apptalking.com/product/log_analytics.html</loc>
     <lastmod>2019-02-04T20:34:23.383Z</lastmod>
   </url>  <url>
@@ -126,9 +129,6 @@
   </url>  <url>
     <loc>https://www.apptalking.com/product/interface.html</loc>
     <lastmod>2018-09-15T08:11:43.622Z</lastmod>
-  </url>  <url>
-    <loc>https://www.apptalking.com/product/index.html</loc>
-    <lastmod>2018-09-15T00:53:30.183Z</lastmod>
   </url>  <url>
     <loc>https://www.apptalking.com/product/baseline.html</loc>
     <lastmod>2018-09-15T00:53:11.284Z</lastmod>
