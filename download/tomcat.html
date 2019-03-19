@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <title>Apptalking</title>
+  <title>Tomcat 安装 Agent | Apptalking</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Apptalking 是一款智能应用性能管理系统，APM 领域处于领先地位。" />
@@ -75,18 +75,16 @@
           <div class="article">
             <div class="inner">
               <header class="article-header">
-                <h1 class="article-title" itemprop="name"></h1>
+                <h1 class="article-title" itemprop="name">Tomcat 安装 Agent</h1>
               </header>
               <div class="article-content" itemprop="articleBody">
-                <p>title: Tomcat Agent 安装</p>
-<hr>
-<h3 id="在-Linux-环境中配置-Tomcat" class="article-heading"><a href="#在-Linux-环境中配置-Tomcat" class="headerlink" title="在 Linux 环境中配置 Tomcat"></a>在 Linux 环境中配置 Tomcat<a class="article-anchor" href="#在-Linux-环境中配置-Tomcat" aria-hidden="true"></a></h3><ol>
+                <h3 id="在-Linux-环境中配置" class="article-heading"><a href="#在-Linux-环境中配置" class="headerlink" title="在 Linux 环境中配置"></a>在 Linux 环境中配置<a class="article-anchor" href="#在-Linux-环境中配置" aria-hidden="true"></a></h3><ol>
 <li>打开{tomcat安装目录}/bin/catalina.sh 文件。</li>
 <li>使用以下的命名添加-javaagent属性。<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export CATALINA_OPTS="$CATALINA_OPTS-javaagent:<span class="tag">&lt;<span class="name">agent解压目录</span>&gt;</span>/javaagent.jar"</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>以上命令的添加位置要在使用CATALINA_OPTS属性之前。</p>
-<h3 id="在windows环境中配置-Tomcat" class="article-heading"><a href="#在windows环境中配置-Tomcat" class="headerlink" title="在windows环境中配置 Tomcat"></a>在windows环境中配置 Tomcat<a class="article-anchor" href="#在windows环境中配置-Tomcat" aria-hidden="true"></a></h3><ol>
+<h3 id="在windows环境中配置" class="article-heading"><a href="#在windows环境中配置" class="headerlink" title="在windows环境中配置"></a>在windows环境中配置<a class="article-anchor" href="#在windows环境中配置" aria-hidden="true"></a></h3><ol>
 <li>打开{tomcat安装目录}/bin/catalina.bat 文件。</li>
 <li>使用以下的命名添加-javaagent属性。<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set CATALINA_OPTS=%CATALINA_OPTS%-javaagent:"Drive:<span class="tag">&lt;<span class="name">agent解压目录</span>&gt;</span>\javaagent.jar"</span><br></pre></td></tr></table></figure>
 </li>
@@ -95,7 +93,7 @@
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2019-03-19T09:59:27.864Z" itemprop="dateModified">上次更新：2019-03-19</time>
+                <time class="article-footer-updated" datetime="2019-03-19T10:03:48.913Z" itemprop="dateModified">上次更新：2019-03-19</time>
                 <a href="app-server-install.html" class="article-footer-prev" title="App Server 安装"><i class="fa fa-chevron-left"></i><span>上一页</span></a>
               </footer>
               
@@ -104,7 +102,7 @@
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">目录</strong>
-              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#在-Linux-环境中配置-Tomcat"><span class="toc-text">在 Linux 环境中配置 Tomcat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在windows环境中配置-Tomcat"><span class="toc-text">在windows环境中配置 Tomcat</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#在-Linux-环境中配置"><span class="toc-text">在 Linux 环境中配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在windows环境中配置"><span class="toc-text">在windows环境中配置</span></a></li></ol>
               <a href="#" id="article-toc-top">回到顶部</a>
             </div>
           </aside>
