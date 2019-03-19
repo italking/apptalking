@@ -2,18 +2,18 @@
 <html lang="zh-cn">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <title>下载 | Apptalking</title>
+  <title>Apptalking</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Apptalking 是一款智能应用性能管理系统，APM 领域处于领先地位。" />
   <!-- Canonical links -->
-  <link rel="canonical" href="https://www.apptalking.com/download/index.html">
+  <link rel="canonical" href="https://www.apptalking.com/download/tomcat.html">
   <!-- Alternative links -->
   
     
-      <link rel="alternative" hreflang="en" href="https://www.apptalking.com/download/index.html">
+      <link rel="alternative" hreflang="en" href="https://www.apptalking.com/download/tomcat.html">
     
-      <link rel="alternative" hreflang="zh-cn" href="https://www.apptalking.com/zh-cn/download/index.html">
+      <link rel="alternative" hreflang="zh-cn" href="https://www.apptalking.com/zh-cn/download/tomcat.html">
     
   
   <!-- Icon -->
@@ -75,22 +75,28 @@
           <div class="article">
             <div class="inner">
               <header class="article-header">
-                <h1 class="article-title" itemprop="name">下载</h1>
+                <h1 class="article-title" itemprop="name"></h1>
               </header>
               <div class="article-content" itemprop="articleBody">
-                <p>Apptalking 安装方式十分便捷，具体参考安装帮助手册。软件包中包含了Controller后端服务程序和Agent程序。安装包中包含了免费使用的license，如果需要更换license，查看 <a href="https://www.apptalking.com/licence/" title="license申请">license申请</a> 页面。</p>
-<h2 id="下载" class="article-heading"><a href="#下载" class="headerlink" title="下载"></a>下载<a class="article-anchor" href="#下载" aria-hidden="true"></a></h2><ul>
-<li>Apptalking 4.1<ul>
-<li><a href="https://pan.baidu.com/s/1VbZYno1L2dbatcsYqZpeVw" title="Apptalking Server" target="_blank" rel="noopener">Apptalking Server</a> （提取码 eu28）</li>
-<li><a href="https://pan.baidu.com/s/1cAH5gkI6TumLp2B-ZvZe7Q" title="Apptalking Server Agent" target="_blank" rel="noopener">Apptalking Server Agent</a> （提取码 de4n）</li>
-</ul>
+                <p>title: Tomcat 安装 Agent</p>
+<hr>
+<h3 id="在-Linux-环境中配置-Tomcat" class="article-heading"><a href="#在-Linux-环境中配置-Tomcat" class="headerlink" title="在 Linux 环境中配置 Tomcat"></a>在 Linux 环境中配置 Tomcat<a class="article-anchor" href="#在-Linux-环境中配置-Tomcat" aria-hidden="true"></a></h3><ol>
+<li>打开{tomcat安装目录}/bin/catalina.sh 文件。</li>
+<li>使用以下的命名添加-javaagent属性。<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export CATALINA_OPTS="$CATALINA_OPTS-javaagent:<span class="tag">&lt;<span class="name">agent解压目录</span>&gt;</span>/javaagent.jar"</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
+</ol>
+<p>以上命令的添加位置要在使用CATALINA_OPTS属性之前。</p>
+<h3 id="在windows环境中配置-Tomcat" class="article-heading"><a href="#在windows环境中配置-Tomcat" class="headerlink" title="在windows环境中配置 Tomcat"></a>在windows环境中配置 Tomcat<a class="article-anchor" href="#在windows环境中配置-Tomcat" aria-hidden="true"></a></h3><ol>
+<li>打开{tomcat安装目录}/bin/catalina.bat 文件。</li>
+<li>使用以下的命名添加-javaagent属性。<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set CATALINA_OPTS=%CATALINA_OPTS%-javaagent:"Drive:<span class="tag">&lt;<span class="name">agent解压目录</span>&gt;</span>\javaagent.jar"</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>以上命令的添加位置要在使用CATALINA_OPTS属性之前。</p>
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2019-03-15T02:13:24.571Z" itemprop="dateModified">上次更新：2019-03-15</time>
-                <a href="app-server-install.html" class="article-footer-next" title="App Server 安装"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+                <time class="article-footer-updated" datetime="2019-03-19T09:47:19.253Z" itemprop="dateModified">上次更新：2019-03-19</time>
+                <a href="index.html" class="article-footer-next" title="下载"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
             </div>
@@ -98,7 +104,7 @@
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">目录</strong>
-              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载"><span class="toc-text">下载</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#在-Linux-环境中配置-Tomcat"><span class="toc-text">在 Linux 环境中配置 Tomcat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在windows环境中配置-Tomcat"><span class="toc-text">在windows环境中配置 Tomcat</span></a></li></ol>
               <a href="#" id="article-toc-top">回到顶部</a>
             </div>
           </aside>
@@ -106,7 +112,7 @@
       </article>
       <aside id="sidebar" role="navigation">
   <div class="inner">
-    <strong class="sidebar-title">下载中心</strong><a href="index.html" class="sidebar-link current sidebar_level_0">下载</a><a href="app-server-install.html" class="sidebar-link sidebar_level_0">App Server 安装</a><a href="null" class="sidebar-link sidebar_level_0">App Server Agent 安装</a><a href="tomcat.md" class="sidebar-link sidebar_level_0">Tomcat</a>
+    <strong class="sidebar-title">下载中心</strong><a href="index.html" class="sidebar-link sidebar_level_0">下载</a><a href="app-server-install.html" class="sidebar-link sidebar_level_0">App Server 安装</a><a href="null" class="sidebar-link sidebar_level_0">App Server Agent 安装</a><a href="tomcat.md" class="sidebar-link sidebar_level_0">Tomcat</a>
   </div>
 </aside>
     </div>
@@ -155,7 +161,7 @@
       </li>
     </ul>
     
-      <strong class="mobile-nav-title">下载中心</strong><a href="index.html" class="mobile-nav-link current sidebar_level_0">下载</a><a href="app-server-install.html" class="mobile-nav-link sidebar_level_0">App Server 安装</a><a href="null" class="mobile-nav-link sidebar_level_0">App Server Agent 安装</a><a href="tomcat.md" class="mobile-nav-link sidebar_level_0">Tomcat</a>
+      <strong class="mobile-nav-title">下载中心</strong><a href="index.html" class="mobile-nav-link sidebar_level_0">下载</a><a href="app-server-install.html" class="mobile-nav-link sidebar_level_0">App Server 安装</a><a href="null" class="mobile-nav-link sidebar_level_0">App Server Agent 安装</a><a href="tomcat.md" class="mobile-nav-link sidebar_level_0">Tomcat</a>
     
   </div>
   <div id="mobile-lang-select-wrap">
