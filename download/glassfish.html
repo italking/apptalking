@@ -2,18 +2,18 @@
 <html lang="zh-cn">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <title>Tomcat 安装 Agent | Apptalking</title>
+  <title>Apptalking</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Apptalking 是一款智能应用性能管理系统，APM 领域处于领先地位。" />
   <!-- Canonical links -->
-  <link rel="canonical" href="https://www.apptalking.com/download/tomcat.html">
+  <link rel="canonical" href="https://www.apptalking.com/download/glassfish.html">
   <!-- Alternative links -->
   
     
-      <link rel="alternative" hreflang="en" href="https://www.apptalking.com/download/tomcat.html">
+      <link rel="alternative" hreflang="en" href="https://www.apptalking.com/download/glassfish.html">
     
-      <link rel="alternative" hreflang="zh-cn" href="https://www.apptalking.com/zh-cn/download/tomcat.html">
+      <link rel="alternative" hreflang="zh-cn" href="https://www.apptalking.com/zh-cn/download/glassfish.html">
     
   
   <!-- Icon -->
@@ -75,26 +75,43 @@
           <div class="article">
             <div class="inner">
               <header class="article-header">
-                <h1 class="article-title" itemprop="name">Tomcat 安装 Agent</h1>
+                <h1 class="article-title" itemprop="name"></h1>
               </header>
               <div class="article-content" itemprop="articleBody">
-                <h3 id="在-Linux-环境中配置" class="article-heading"><a href="#在-Linux-环境中配置" class="headerlink" title="在 Linux 环境中配置"></a>在 Linux 环境中配置<a class="article-anchor" href="#在-Linux-环境中配置" aria-hidden="true"></a></h3><ol>
-<li>打开{tomcat安装目录}/bin/catalina.sh 文件。</li>
-<li>使用以下的命名添加-javaagent属性。<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export CATALINA_OPTS="$CATALINA_OPTS-javaagent:<span class="tag">&lt;<span class="name">agent解压目录</span>&gt;</span>/javaagent.jar"</span><br></pre></td></tr></table></figure>
+                <ol>
+<li><p>使用 GlassFish asadmin 添加 -javaagent JVM option。</p>
+<ul>
+<li><p>Windows</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">glassfish4\bin\asadmin.bat create-jvm-options</span><br><span class="line"><span class="string">'-javaagent:&#123;agent 安装目录&#125;\javaagent.jar'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Linux</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">glassfish4\bin\asadmin create-jvm-options</span><br><span class="line">"-javaagent\:&#123;agent 安装目录&#125;/javaagent.jar"</span><br></pre></td></tr></table></figure>
+<p>{agent 安装目录} 替换为真实的 Agent 解压目录</p>
+</li>
+</ul>
+</li>
+<li><p>在 Glassfish 控制台添加</p>
+<p> <img src="https://www.apptalking.com/images/Glassfish-Agent-Install.png" alt="Apptalking" title="Apptalking 智能应用性能管理系统"></p>
+<p> {agent 安装目录} 替换为真实的 Agent 解压目录</p>
+</li>
+<li><p>添加 Apptalking 的包到 Glassfish the boot delegation entry 配置中。</p>
 </li>
 </ol>
-<p>以上命令的添加位置要在使用CATALINA_OPTS属性之前。</p>
-<h3 id="在windows环境中配置" class="article-heading"><a href="#在windows环境中配置" class="headerlink" title="在windows环境中配置"></a>在windows环境中配置<a class="article-anchor" href="#在windows环境中配置" aria-hidden="true"></a></h3><ol>
-<li>打开{tomcat安装目录}/bin/catalina.bat 文件。</li>
-<li>使用以下的命名添加-javaagent属性。<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set CATALINA_OPTS=%CATALINA_OPTS%-javaagent:"Drive:<span class="tag">&lt;<span class="name">agent解压目录</span>&gt;</span>\javaagent.jar"</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>在 GlassFish 3.x 到 3.1.2 版本， 使用配置文件 <glassfis h_home="">/glassfish/osgi/felix/conf/config.properties ， 添加以下的配置。</glassfis></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.osgi.framework.bootdelegation=com.apptalking.*</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<p>以上命令的添加位置要在使用CATALINA_OPTS属性之前。</p>
-
+<li><p>GlassFish 3.1.2以上版本, 使用配置文件 &lt;glassfish_home&gt;/glassfish/config/osgi.properties file, 添加配以下配置</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">com.apptalking.*</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>参考以下示例：</p>
+<pre><code><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># Although Eclipselink imports these packages, in typical GlassFish installation,</span><br><span class="line"># Oracle JDBC driver may not be available as a bundle, so we ask user to install it in </span><br><span class="line"># java.ext.dirs and the bootdelegation helps there.</span><br><span class="line">eclipselink.bootdelegation=oracle.sql, oracle.sql.*</span><br><span class="line"></span><br><span class="line"># There is no need to use bootdelegation except for the following issues:</span><br><span class="line"># 1. EclipseLink</span><br><span class="line"># 4. NetBeans profiler packages exist in parent class loader (see issue #8612)</span><br><span class="line"># 5. BTrace exists in bootclasspath.</span><br><span class="line">org.osgi.framework.bootdelegation=$&#123;eclipselink.bootdelegation&#125;, \</span><br><span class="line">								  com.sun.btrace, com.sun.btrace.*, \</span><br><span class="line">								  org.netbeans.lib.profiler, org.netbeans.lib.profiler.*,\</span><br><span class="line">								  com.apptalking.*</span><br></pre></td></tr></table></figure>
+</code></pre>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2019-03-20T03:06:30.157Z" itemprop="dateModified">上次更新：2019-03-20</time>
-                <a href="app-server-install.html" class="article-footer-prev" title="App Server 安装"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="glassfish.html" class="article-footer-next" title="sidebar.download.-glassfish"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+                <time class="article-footer-updated" datetime="2019-03-20T04:31:31.982Z" itemprop="dateModified">上次更新：2019-03-20</time>
+                <a href="tomcat.html" class="article-footer-prev" title="sidebar.download.-tomcat"><i class="fa fa-chevron-left"></i><span>上一页</span></a>
               </footer>
               
             </div>
@@ -102,7 +119,7 @@
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">目录</strong>
-              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#在-Linux-环境中配置"><span class="toc-text">在 Linux 环境中配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在windows环境中配置"><span class="toc-text">在windows环境中配置</span></a></li></ol>
+              
               <a href="#" id="article-toc-top">回到顶部</a>
             </div>
           </aside>
@@ -110,7 +127,7 @@
       </article>
       <aside id="sidebar" role="navigation">
   <div class="inner">
-    <strong class="sidebar-title">下载中心</strong><a href="index.html" class="sidebar-link sidebar_level_0">下载</a><a href="app-server-install.html" class="sidebar-link sidebar_level_0">App Server 安装</a><a href="tomcat.html" class="sidebar-link current sidebar_level_0">App Server Agent 安装</a><a href="tomcat.html" class="sidebar-link current sidebar_level_1">Tomcat</a><a href="glassfish.html" class="sidebar-link sidebar_level_1">Glassfish</a>
+    <strong class="sidebar-title">下载中心</strong><a href="index.html" class="sidebar-link sidebar_level_0">下载</a><a href="app-server-install.html" class="sidebar-link sidebar_level_0">App Server 安装</a><a href="tomcat.html" class="sidebar-link sidebar_level_0">App Server Agent 安装</a><a href="tomcat.html" class="sidebar-link sidebar_level_1">Tomcat</a><a href="glassfish.html" class="sidebar-link current sidebar_level_1">Glassfish</a>
   </div>
 </aside>
     </div>
@@ -159,7 +176,7 @@
       </li>
     </ul>
     
-      <strong class="mobile-nav-title">下载中心</strong><a href="index.html" class="mobile-nav-link sidebar_level_0">下载</a><a href="app-server-install.html" class="mobile-nav-link sidebar_level_0">App Server 安装</a><a href="tomcat.html" class="mobile-nav-link current sidebar_level_0">App Server Agent 安装</a><a href="tomcat.html" class="mobile-nav-link current sidebar_level_1">Tomcat</a><a href="glassfish.html" class="mobile-nav-link sidebar_level_1">Glassfish</a>
+      <strong class="mobile-nav-title">下载中心</strong><a href="index.html" class="mobile-nav-link sidebar_level_0">下载</a><a href="app-server-install.html" class="mobile-nav-link sidebar_level_0">App Server 安装</a><a href="tomcat.html" class="mobile-nav-link sidebar_level_0">App Server Agent 安装</a><a href="tomcat.html" class="mobile-nav-link sidebar_level_1">Tomcat</a><a href="glassfish.html" class="mobile-nav-link current sidebar_level_1">Glassfish</a>
     
   </div>
   <div id="mobile-lang-select-wrap">
