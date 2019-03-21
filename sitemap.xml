@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.apptalking.com/about/index.html</loc>
+    
+    <lastmod>2019-03-21T08:22:22.205Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.apptalking.com/download/glassfish.html</loc>
     
     <lastmod>2019-03-20T04:31:31.982Z</lastmod>
@@ -89,13 +96,6 @@
     <loc>https://www.apptalking.com/product/backend-setting.html</loc>
     
     <lastmod>2019-01-24T10:17:21.970Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.apptalking.com/about/index.html</loc>
-    
-    <lastmod>2019-01-24T03:08:34.895Z</lastmod>
     
   </url>
   
